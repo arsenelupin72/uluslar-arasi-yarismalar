@@ -45,84 +45,109 @@
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap');
+
 :root {
-  --bg:#f3f6fa; --ink:#142033; --muted:#536176; --line:#d9e0ea;
-  --card:#ffffff; --accent:#244a79; --accent2:#eaf1fa; --warn:#fff5dc;
+  color-scheme:dark;
+  --bg:#030712; --ink:#f3f4f6; --muted:#9ca3af; --line:#1f2937;
+  --card:#111827; --accent:#22d3ee; --accent2:rgba(6,182,212,.12);
+  --warn:rgba(234,179,8,.08);
 }
 * {box-sizing:border-box}
-body {margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header {background:#12233c;color:#fff;padding:28px 20px 24px}
+body {margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+::selection {background:#155e75;color:#ecfeff}
+header {background:radial-gradient(ellipse at 85% 0,rgba(8,145,178,.11),transparent 60%),#000814;color:var(--ink);padding:48px 24px 40px;border-bottom:1px solid var(--line)}
 header .wrap,main,.toolbar-wrap {max-width:1180px;margin:0 auto}
-h1 {font-size:clamp(24px,4vw,38px);line-height:1.15;margin:0 0 10px}
-header p {max-width:920px;color:#e1e9f5;margin:8px 0}
-.pills {display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.pill {border:1px solid #5c7597;border-radius:999px;padding:5px 10px;font-size:13px;color:#fff}
-.toolbar-wrap {padding:18px 20px 4px}
-.toolbar {display:grid;grid-template-columns:2fr 1fr;gap:10px}
-input,select {width:100%;padding:12px 13px;border:1px solid #c4cedb;border-radius:10px;background:#fff;font:inherit;color:var(--ink)}
-.summary {padding:12px 0;color:var(--muted);font-size:14px}
-main {padding:8px 20px 50px}
-.card {display:grid;grid-template-columns:145px minmax(0,1fr);gap:20px;margin:15px 0;background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 3px 12px rgba(24,43,72,.045)}
-.visual {background:linear-gradient(165deg,#e9eef5,#f8fafc);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 12px;gap:10px;min-height:175px;border-right:1px solid var(--line)}
-.visual img {width:76px;height:76px;object-fit:contain;border-radius:12px;background:white;padding:8px;border:1px solid var(--line)}
-.rank {font-weight:800;letter-spacing:.08em;font-size:11px;color:var(--accent)}
-.visual-note {font-size:11px;color:var(--muted);text-align:center;overflow-wrap:anywhere}
-.body {padding:19px 20px 20px;min-width:0}
-.title-line {display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px}
-h2 {font-size:19px;line-height:1.25;margin:0;max-width:740px}
-.badge {display:inline-block;flex-shrink:0;font-size:11px;line-height:1.3;border:1px solid #c9d4e1;border-radius:999px;padding:5px 9px;background:#f7f9fc;color:#34455d;max-width:230px}
-.facts {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0 14px}
-.facts div {padding:9px 10px;background:#f8fafc;border:1px solid #e4e9f0;border-radius:8px;min-width:0}
-.facts b {display:block;font-size:12px;color:#364a63;margin-bottom:3px}
-.facts span {display:block;overflow-wrap:anywhere}
-p {margin:10px 0}
-.caution {background:var(--warn);border-left:3px solid #e0b24b;padding:9px 11px;border-radius:5px}
-.links {display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-a {color:#174e8e;text-decoration:none}
-a:hover {text-decoration:underline}
-a.primary {display:inline-block;background:var(--accent);color:#fff;border-radius:8px;padding:8px 12px;font-weight:650}
-.footer {color:var(--muted);font-size:13px;padding:25px 20px 36px;border-top:1px solid var(--line);max-width:1180px;margin:0 auto}
-@media(max-width:720px) {
- .toolbar {grid-template-columns:1fr}
- .card {grid-template-columns:1fr;gap:0}
- .visual {min-height:auto;flex-direction:row;justify-content:flex-start;border-right:0;border-bottom:1px solid var(--line);padding:12px 16px}
- .visual img {width:48px;height:48px}
- .visual-note {margin-left:auto;max-width:40%}
- .title-line {display:block}
- .badge {margin-top:9px;max-width:none}
- .facts {grid-template-columns:1fr}
- .body {padding:16px}
-}
-@media print {
- body {background:#fff}
- header {background:#fff;color:#111;padding:12px;border-bottom:2px solid #111}
- header p,.pill {color:#333}
- .toolbar-wrap {display:none}
- .card {break-inside:avoid;box-shadow:none}
- a {color:#111;text-decoration:underline}
- a.primary {background:#fff;color:#111;border:1px solid #111}
-}
-
-/* Rehberin üst sol bölümündeki profil kartı */
+h1 {font-size:clamp(26px,3.6vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.15;margin:0 0 18px;color:#a5f3fc}
+header p {max-width:920px;color:#bfdbfe;margin:8px 0;line-height:1.8}
+.pills {display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pill {border:1px solid #164e63;background:rgba(6,182,212,.07);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:500;color:#a5f3fc}
 .header-layout {display:grid;grid-template-columns:165px minmax(0,1fr);gap:28px;align-items:start}
 .profile-identity {text-align:center;max-width:165px}
-.profile-identity img {display:block;width:122px;height:122px;margin:0 auto;object-fit:cover;object-position:center 23%;border-radius:50%;border:3px solid rgba(255,255,255,.8);box-shadow:0 4px 14px rgba(0,0,0,.22)}
-.profile-name {margin-top:11px;color:#f0f5fc;font-weight:650;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+.profile-identity img {display:block;width:122px;height:122px;margin:0 auto;object-fit:cover;object-position:center 23%;border-radius:50%;border:3px solid rgba(34,211,238,.6);box-shadow:0 0 0 7px rgba(6,182,212,.05)}
+.profile-name {margin-top:16px;color:#d1d5db;font-weight:600;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
 .header-main {min-width:0}
+.toolbar-wrap {padding:28px 24px 4px}
+.toolbar {display:grid;grid-template-columns:2fr 1fr;gap:12px}
+input,select {width:100%;min-height:48px;padding:12px 14px;border:1px solid #374151;border-radius:8px;background:var(--card);font:inherit;color:var(--ink);transition:border-color .16s,box-shadow .16s}
+input::placeholder {color:var(--muted);opacity:1}
+input:hover,select:hover {border-color:#64748b}
+.summary {padding:18px 0 10px;color:#67e8f9;font-size:13px;font-weight:500}
+.checked,.update-note {color:var(--muted);font-size:13px}
+.update-note {margin:0;padding-bottom:12px;max-width:1000px;line-height:1.8}
+main {padding:8px 24px 56px}
+.card {display:grid;grid-template-columns:145px minmax(0,1fr);gap:20px;margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.12);transition:border-color .2s,box-shadow .2s}
+.card:hover {border-color:#22d3ee;box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.visual {background:rgba(3,7,18,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 12px;gap:13px;min-height:175px;border-right:1px solid var(--line)}
+.visual img {width:76px;height:76px;object-fit:contain;border-radius:8px;background:white;padding:8px;border:1px solid #374151}
+.rank {font-weight:700;letter-spacing:.1em;font-size:11px;color:#67e8f9}
+.visual-note {font-size:11px;color:var(--muted);text-align:center;overflow-wrap:anywhere}
+.body {padding:24px 24px 24px 0;min-width:0}
+.title-line {display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
+h2 {font-size:20px;font-weight:700;letter-spacing:-.025em;line-height:1.35;margin:0;max-width:740px;color:#fff;overflow-wrap:anywhere}
+.badge {display:inline-block;flex-shrink:0;font-size:11px;font-weight:500;line-height:1.5;border:1px solid rgba(34,211,238,.3);border-radius:999px;padding:5px 10px;background:rgba(6,182,212,.12);color:#67e8f9;max-width:230px;overflow-wrap:anywhere}
+.card[data-status="Açık"] .badge,.card[data-status="Yıl boyu"] .badge {background:rgba(34,197,94,.15);color:#4ade80;border-color:rgba(34,197,94,.3)}
+.card[data-status="Kapalı"] .badge {background:rgba(156,163,175,.08);color:#d1d5db;border-color:#374151}
+.card[data-status="Teyit gerekli"] .badge {background:rgba(234,179,8,.12);color:#facc15;border-color:rgba(234,179,8,.3)}
+.facts {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 18px}
+.facts div {padding:12px 13px;background:rgba(3,7,18,.3);border:1px solid var(--line);border-radius:8px;min-width:0}
+.facts b {display:block;font-size:12px;font-weight:600;color:#a5f3fc;margin-bottom:5px}
+.facts span {display:block;color:#d1d5db;overflow-wrap:anywhere}
+p {margin:12px 0}
+.caution {background:var(--warn);border-left:3px solid rgba(234,179,8,.65);color:#d1d5db;padding:11px 14px;border-radius:0 8px 8px 0;font-size:14px}
+.caution b {color:#fde68a;font-weight:600}
+.links {display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:18px}
+a {color:#22d3ee;text-decoration:none;transition:color .15s,background .15s}
+a:hover {color:#67e8f9;text-decoration:underline}
+a.primary {display:inline-block;background:#22d3ee;color:#030712;border:1px solid #22d3ee;border-radius:8px;padding:9px 14px;font-size:14px;font-weight:700}
+a.primary:hover {background:#67e8f9;border-color:#67e8f9;text-decoration:none}
+.footer {color:var(--muted);font-size:13px;padding:28px 24px 36px;border-top:1px solid var(--line);max-width:1180px;margin:0 auto}
+select:focus-visible,input:focus-visible,a:focus-visible {outline:2px solid #22d3ee;outline-offset:4px}
+.card:target {outline:2px solid #22d3ee;outline-offset:3px;scroll-margin-top:16px}
 @media(max-width:720px) {
- .header-layout {grid-template-columns:112px minmax(0,1fr);gap:16px}
+ header {padding:30px 20px}
+ .header-layout {grid-template-columns:112px minmax(0,1fr);gap:20px}
  .profile-identity {max-width:112px}
  .profile-identity img {width:90px;height:90px}
  .profile-name {font-size:12px}
+ .toolbar-wrap {padding:22px 20px 4px}
+ .toolbar {grid-template-columns:1fr}
+ main {padding:4px 20px 40px}
+ .card {grid-template-columns:1fr;gap:0}
+ .visual {min-height:auto;flex-direction:row;justify-content:flex-start;border-right:0;border-bottom:1px solid var(--line);padding:14px 18px;gap:12px}
+ .visual img {width:48px;height:48px}
+ .visual-note {margin-left:auto;max-width:40%}
+ .body {padding:20px}
+ .title-line {display:block}
+ .badge {margin-top:12px;max-width:100%}
+ .facts {grid-template-columns:1fr}
+ h2 {font-size:19px}
 }
 @media(max-width:470px) {
- .header-layout {grid-template-columns:1fr;gap:20px}
- .profile-identity {display:flex;max-width:none;gap:12px;align-items:center;text-align:left}
+ .header-layout {grid-template-columns:1fr;gap:24px}
+ .profile-identity {display:flex;max-width:none;gap:14px;align-items:center;text-align:left}
  .profile-identity img {width:66px;height:66px;margin:0;flex-shrink:0}
  .profile-name {margin:0;font-size:13px}
+ .pills {gap:7px}
+ .pill {font-size:11px}
+ .toolbar-wrap,main {padding-left:16px;padding-right:16px}
+ .body {padding:18px}
+ .visual {padding:12px 16px}
 }
-.toolbar{grid-template-columns:2fr 1fr}.checked,.update-note{color:var(--muted);font-size:13px}.update-note{padding-bottom:10px}.card[data-status="Açık"] .badge,.card[data-status="Yıl boyu"] .badge{background:#e7f5ed;color:#1c5e39;border-color:#b9dec9}.card[data-status="Kapalı"] .badge{background:#f1f2f4;color:#626c7b}.card[data-status="Teyit gerekli"] .badge{background:#fff3d5;color:#76550d}.badge{overflow-wrap:anywhere}select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #3f83d5;outline-offset:3px}.card:target{outline:3px solid #3f83d5;scroll-margin-top:12px}@media(max-width:720px){.toolbar{grid-template-columns:1fr}}
-.quick-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.filter-toggle{display:inline-flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid #c4cedb;border-radius:10px;background:#fff;color:var(--ink);font-size:14px;cursor:pointer;transition:background .15s,border-color .15s}.filter-toggle:hover{background:var(--accent2);border-color:#8aa3c1}.filter-toggle:has(input:checked){background:var(--accent2);border-color:var(--accent);color:var(--accent)}.filter-toggle input{width:17px;height:17px;padding:0;margin:0;flex:0 0 17px;accent-color:var(--accent);cursor:pointer}.filter-toggle:focus-within{outline:2px solid #3f83d5;outline-offset:2px}@media(max-width:470px){.quick-filters{gap:8px}.filter-toggle{width:100%;padding:11px 12px}}
+@media(prefers-reduced-motion:reduce) {*,*::before,*::after {transition:none!important}}
+@media print {
+ :root {color-scheme:light;--bg:#fff;--ink:#111;--muted:#444;--line:#ccc;--card:#fff}
+ body {background:#fff;color:#111}
+ header {background:#fff;color:#111;padding:12px;border-bottom:2px solid #111}
+ h1,h2,header p,.pill,.profile-name,.rank,.facts b,.facts span,.caution,.caution b {color:#111}
+ .pill,.facts div,.visual,.caution {background:#fff}
+ .profile-identity img {border-color:#aaa;box-shadow:none}
+ .toolbar-wrap {display:none}
+ .card {break-inside:avoid;box-shadow:none}
+ .card .badge {background:#fff!important;color:#111!important;border-color:#aaa!important}
+ a {color:#111;text-decoration:underline}
+ a.primary {background:#fff;color:#111;border:1px solid #111}
+}
 </style>
 </head>
 <body>
@@ -150,7 +175,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
     <select id="st" aria-label="Duruma göre filtrele">
       <option value="">Tüm durumlar</option><option value="Açık">Açık</option><option value="Kapalı">Kapalı</option><option value="Yakında">Yakında</option><option value="Teyit gerekli">Teyit gerekli</option><option value="Yıl boyu">Yıl boyu</option><option value="new">Yeni eklenenler</option></select>
   </div>
-  <div class="quick-filters" role="group" aria-label="Hızlı filtreler"><label class="filter-toggle" title="İşaretlendiğinde yalnızca açık ve yıl boyu başvuru alan kayıtlar gösterilir."><input type="checkbox" id="open-only" aria-label="Sadece açık başvuruları göster"><span>Açık başvurular önce</span></label><label class="filter-toggle" title="Ücretsiz olduğu doğrulanan kayıtlar; zorunlu ücretli aşamalar hariç. Yol ve konaklama giderleri olabilir."><input type="checkbox" id="free-only"><span>Sadece ücretsiz yarışmalar</span></label></div>
+  
   <div class="summary" id="summary" role="status" aria-live="polite">90 yarışma/program · Tahmini prestij sırası · Son içerik kontrolü: 8 Kasım 2026</div><p class="update-note">Açık, kapalı ve teyit bekleyen başvurular ayrı gösterilir. Kesin tarihi bilinen kayıtların etiketi zaman geçtikçe değişir; yeni dönem duyuruları ayrıca kontrol edilir. Size uygun yarışmayı seçerken koşulları inceleyin ve başvurunuzu son güne bırakmayın.</p><noscript><p>Filtreler ve otomatik tarih kontrolü için JavaScript gereklidir. Aşağıdaki durumlar 8 Kasım 2026 kontrolünü gösterir.</p></noscript>
 </div>
 <main id="cards">
@@ -161,7 +186,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> Yeni başvuru alınmıyor; halk oylaması başvuru dönemi değildir.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://breakthroughjuniorchallenge.org/rules" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-1" aria-label="Breakthrough Junior Challenge — 2026 kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-86" data-rank="86" data-status="Yakında">
- <div class="visual"><div class="rank">PRESTİJ 2 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=beamlineforschools.cern&amp;sz=128" alt="CERN Beamline for Schools 2027 site simgesi"><div class="visual-note">beamlineforschools.cern</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 2</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=beamlineforschools.cern&amp;sz=128" alt="CERN Beamline for Schools 2027 site simgesi"><div class="visual-note">beamlineforschools.cern</div></div>
  <div class="body"><div class="title-line"><h2>CERN Beamline for Schools 2027</h2><span class="badge">Teslim Aralık 2026&#39;da açılacak</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>Aralık 2026–12 Mart 2027, 23.59 CET; açılış günü belirtilmiyor</span></div><div><b>Ücret</b><span>Ücretsiz</span></div><div><b>Yaş / uygunluk</b><span>Dünyanın her yerinden lise öğrenci takımları; yaş/takım şartları güncel katılım koşullarından kontrol edilmeli</span></div><div><b>Konu</b><span>Parçacık fiziği, deney tasarımı ve bilim iletişimi</span></div><div><b>Başvuru / teslim</b><span>Bir hızlandırıcı demet hattında yapılabilecek deney önerisi; güncel öneri kılavuzuna göre takım başvurusu.</span></div><div><b>Ödül / sonuç</b><span>Seçilen takımlara CERN, DESY veya ELSA&#39;da deney yapma fırsatı; uygun başvurulara sertifika</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> Öneri teslimi henüz başlamadı. Kasım çevrim içi hazırlık etkinlikleri ile başvuru takvimi birbirinden farklıdır.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -185,7 +210,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> Henüz başvuru açılmadı. 2027 finali 7–12 Haziran, Rochester; katılım kaydı ile gezi kaydı ayrı.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://geniusolympiad.org/" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-4" aria-label="GENIUS Olympiad 2027 kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-90" data-rank="90" data-status="Teyit gerekli">
- <div class="visual"><div class="rank">PRESTİJ 6 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=nss.org&amp;sz=128" alt="NSS Gerard K. O’Neill Space Settlement Contest site simgesi"><div class="visual-note">nss.org</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 6</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=nss.org&amp;sz=128" alt="NSS Gerard K. O’Neill Space Settlement Contest site simgesi"><div class="visual-note">nss.org</div></div>
  <div class="body"><div class="title-line"><h2>NSS Gerard K. O’Neill Space Settlement Contest</h2><span class="badge">Yeni dönem takvimi teyit edilmeli</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>Genel takvim Aralık açılışı ve 15 Şubat kapanışı belirtiyor; 2027&#39;ye özel kesin tarih portalda doğrulanmalı</span></div><div><b>Ücret</b><span>Güncel giriş ücreti resmî kayıt portalında teyit edilmeli</span></div><div><b>Yaş / uygunluk</b><span>Dünya genelinde 12. sınıfa kadar öğrenciler; kategori ve takım koşulları kontrol edilmeli</span></div><div><b>Konu</b><span>Uzay yerleşimleri, mühendislik, tasarım ve uzayda yaşam</span></div><div><b>Başvuru / teslim</b><span>Gezegen yüzeyinde değil, serbest uzayda kalıcı yerleşim projesi; ana dosya PDF, 50 sayfayı aşmaması isteniyor.</span></div><div><b>Ödül / sonuç</b><span>Kategori dereceleri ve ISDC&#39;de çalışma sunma fırsatları; yeni dönem ödülleri teyit edilmeli</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> Günümüzde NSS tarafından yürütülüyor; NASA yarışması olarak tanıtılmamalı. Edebî kategoride AI metni yasak; diğer kullanımlar açıkça kaynaklandırılmalı.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -215,7 +240,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> Görselin kaynağı gerçek fotoğraf olmalı; bilgisayarda üretilmiş görüntü kabul edilmiyor.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://www.worldphoto.org/sony-world-photography-awards/youth" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-8" aria-label="Sony World Photography Awards — Youth kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-88" data-rank="88" data-status="Kapalı">
- <div class="visual"><div class="rank">PRESTİJ 11 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=poetrysociety.org.uk&amp;sz=128" alt="Foyle Young Poets of the Year Award site simgesi"><div class="visual-note">poetrysociety.org.uk</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 11</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=poetrysociety.org.uk&amp;sz=128" alt="Foyle Young Poets of the Year Award site simgesi"><div class="visual-note">poetrysociety.org.uk</div></div>
  <div class="body"><div class="title-line"><h2>Foyle Young Poets of the Year Award</h2><span class="badge">2026 sonuçlandı · 2027 takip edilecek</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>2026 kazananları açıklanmış; 2027 başvuru takvimi henüz doğrulanmadı</span></div><div><b>Ücret</b><span>Yeni dönem ücreti/kuralları duyuruda doğrulanmalı</span></div><div><b>Yaş / uygunluk</b><span>11–17 yaş; uluslararası katılım</span></div><div><b>Konu</b><span>İngilizce şiir ve yaratıcı yazarlık</span></div><div><b>Başvuru / teslim</b><span>2026&#39;da uluslararası katılımcılardan en fazla 40 satırlık bir özgün şiir; 2027 koşulları ayrıca bekleniyor.</span></div><div><b>Ödül / sonuç</b><span>2026&#39;da 15 kazanan ve 85 övgüye değer şair; ülkeye göre farklı ödül yolları</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> 2026 kuralları 2027 için kesin kabul edilmemeli. Üretken AI ile yazılmış şiirler kabul edilmiyor.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -239,7 +264,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> 2026 sayfasındaki eski &#39;submit&#39; bağlantısı yeni dönemin açıldığı anlamına gelmez.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://www.johnlockeinstitute.com/essay-competition" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-11" aria-label="John Locke Global Essay Prize kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-85" data-rank="85" data-status="Açık">
- <div class="visual"><div class="rank">PRESTİJ 15 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=royalinstitutephilosophy.org&amp;sz=128" alt="Think Student Essay Prize 2026–2027 site simgesi"><div class="visual-note">royalinstitutephilosophy.org</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 15</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=royalinstitutephilosophy.org&amp;sz=128" alt="Think Student Essay Prize 2026–2027 site simgesi"><div class="visual-note">royalinstitutephilosophy.org</div></div>
  <div class="body"><div class="title-line"><h2>Think Student Essay Prize 2026–2027</h2><span class="badge">Başvuru açık · 19 Nisan 2027</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>19 Nisan 2027, gece yarısı BST; son saat ifadesi organizatörden teyit edilmeli</span></div><div><b>Ücret</b><span>Resmî çağrıda ücret belirtilmiyor</span></div><div><b>Yaş / uygunluk</b><span>Son başvuru tarihinde 15–18 yaş; tüm ülkeler</span></div><div><b>Konu</b><span>Özgür irade, ahlak, bilinç, yapay zekâ ve felsefe</span></div><div><b>Başvuru / teslim</b><span>Verilen altı sorudan biri üzerine en çok 1.200 kelimelik İngilizce yazı; Word belgesi ve başvuru formu. Kısa listeye sözlü görüşme.</span></div><div><b>Ödül / sonuç</b><span>Kazanan yazı Think dergisinde yayımlanır; kısa listeye bir yıllık dergi aboneliği</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> Yazımda AI yardımı diskalifiye nedeni. Kaynakça ve dipnot istenmiyor; özgün kuralları okuyun.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -263,7 +288,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> Kayıt ve ödeme teslimden önce tamamlanmalı. Organizatör yapay zekâ araçlarını yasaklıyor.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://harvardinternationalreview.com/contest" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-14" aria-label="Harvard International Review Academic Writing Contest kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-87" data-rank="87" data-status="Açık">
- <div class="visual"><div class="rank">PRESTİJ 19 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=www.thehuea.org&amp;sz=128" alt="Harvard International Economics Essay Contest 2026–2027 site simgesi"><div class="visual-note">www.thehuea.org</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 19</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=www.thehuea.org&amp;sz=128" alt="Harvard International Economics Essay Contest 2026–2027 site simgesi"><div class="visual-note">www.thehuea.org</div></div>
  <div class="body"><div class="title-line"><h2>Harvard International Economics Essay Contest 2026–2027</h2><span class="badge">Başvuru açık · 5 Ocak 2027</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>5 Ocak 2027, 23.59 Boston saati (ET); geç başvuru yok</span></div><div><b>Ücret</b><span>Türkiye&#39;deki okul öğrencileri için 35 USD; isteğe bağlı geri bildirim 20 USD; muafiyet talep edilebilir</span></div><div><b>Yaş / uygunluk</b><span>Tüm ülkelerden lise öğrencileri; 9–10 ve 11–12. sınıf bölümleri; kişi başına tek yazı</span></div><div><b>Konu</b><span>Ekonomi, yapay zekâ, eşitsizlik, iklim ve kamu politikası</span></div><div><b>Başvuru / teslim</b><span>En fazla 1.500 kelimelik anonim PDF; dipnotlar sayılır, kaynakça sayılmaz. Verilen konu veya kendi ekonomi sorunuz.</span></div><div><b>Ödül / sonuç</b><span>Her bölümde 3 kazananın yazısı yayımlanır; finalist ve övgüye değer yazılara tanınma ve dijital sertifika</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> HUEA öğrenci topluluğu yarışmasıdır; Harvard lisans kabulü değildir. Jüride Harvard profesörü bulunması garanti edilmiyor.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -311,7 +336,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> NYT kaynak erişimi engellendi; açık veya kapalı olduğu kesinleştirilemedi.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Kaynağa erişim / güncel bilgi teyidi gerekli</p>
  <div class="links"><a class="primary" href="https://www.nytimes.com/spotlight/learning-contests" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-21" aria-label="NYT — STEM Video Interview Contest kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-84" data-rank="84" data-status="Kapalı">
- <div class="visual"><div class="rank">PRESTİJ 27 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=neuroethicsessaycontest.com&amp;sz=128" alt="IYNA–INS Neuroethics Essay Contest — Lise Kategorisi site simgesi"><div class="visual-note">neuroethicsessaycontest.com</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 27</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=neuroethicsessaycontest.com&amp;sz=128" alt="IYNA–INS Neuroethics Essay Contest — Lise Kategorisi site simgesi"><div class="visual-note">neuroethicsessaycontest.com</div></div>
  <div class="body"><div class="title-line"><h2>IYNA–INS Neuroethics Essay Contest — Lise Kategorisi</h2><span class="badge">2026 kapalı · yeni çağrı bekleniyor</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>2026 son teslim: 31 Ağustos, 23.30 PDT; 2027 çağrısı henüz doğrulanmadı</span></div><div><b>Ücret</b><span>2026 çağrısında başvuru ücreti belirtilmiyor; üyelik zorunlu değil</span></div><div><b>Yaş / uygunluk</b><span>2026 Ocak–Temmuz arasında lise/ortaöğretimde bulunan öğrenciler; tüm ülkeler</span></div><div><b>Konu</b><span>Nöroetik, psikoloji, beyin bilimleri, etik ve hukuk</span></div><div><b>Başvuru / teslim</b><span>2026 kuralları: tek yazarlı İngilizce metin, en çok 1.000 kelime; özet ve kaynakça hariç; anonim değerlendirme şablonu.</span></div><div><b>Ödül / sonuç</b><span>2026&#39;da kategori başına en çok 500 USD ve bir yıllık INS üyeliği; seçilen yazılara yayın fırsatı</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> 2026 başvuruları resmen kapanmış. 2027 için eski tarihler kullanılmamalı. AI içerik üretimi yasak; izin verilen yardımcı kullanımlar beyan edilmeli.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -449,7 +474,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> Üçüncü taraf sitelerdeki tahmini Mart 2027 tarihi kesin son tarih değildir. Organizatör CCIR&#39;dir.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://cambridge-research.org/essay-competition/" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-43" aria-label="Cambridge Re:think Essay Competition kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-89" data-rank="89" data-status="Yakında">
- <div class="visual"><div class="rank">PRESTİJ 50 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=jasna.org&amp;sz=128" alt="JASNA Student Essay Contest — Lise Kategorisi site simgesi"><div class="visual-note">jasna.org</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 50</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=jasna.org&amp;sz=128" alt="JASNA Student Essay Contest — Lise Kategorisi site simgesi"><div class="visual-note">jasna.org</div></div>
  <div class="body"><div class="title-line"><h2>JASNA Student Essay Contest — Lise Kategorisi</h2><span class="badge">2027 teslimleri Şubat&#39;ta başlayacak</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>2027 ayrıntıları Kasım 2026&#39;da; teslim açılışı Şubat 2027. Kesin kapanış tarihi henüz açıklanmadı</span></div><div><b>Ücret</b><span>Yeni dönem ücreti teyit edilmeli; JASNA üyeliği şart değil</span></div><div><b>Yaş / uygunluk</b><span>Dünya genelindeki lise ve evde eğitim öğrencileri</span></div><div><b>Konu</b><span>Jane Austen eserleri ve edebiyat incelemesi</span></div><div><b>Başvuru / teslim</b><span>Yeni dönem konusu ve biçim kuralları açıklanınca İngilizce edebiyat incelemesi; 2026 konusuyla başvuru yapılmamalı.</span></div><div><b>Ödül / sonuç</b><span>Sayfada 1.000/500/250 USD burslar ve yayın imkânı listeleniyor; 2027 koşulları teyit edilmeli</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> 2026 dönemi kapalı; 2027 konu ve kurallarının yayımlanması takip edilmeli.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -581,7 +606,7 @@ a.primary {display:inline-block;background:var(--accent);color:#fff;border-radiu
  <p class="caution"><b>Başvurmadan önce:</b> AI tarafından üretilmiş başvurular kabul edilmiyor; yarışma yazının yayımlanmasına izin içeriyor.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
  <div class="links"><a class="primary" href="https://readpublicforum.com/contest" target="_blank" rel="noopener noreferrer">Resmî kaynak / koşullar</a><a href="#yarisma-64" aria-label="Public Forum Summer Essay Contest 2027 kalıcı bağlantısı">Bağlantı</a></div></div></article>
 <article class="card" id="yarisma-83" data-rank="83" data-status="Açık">
- <div class="visual"><div class="rank">PRESTİJ 72 · YENİ</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=logosjournal.org&amp;sz=128" alt="Logos Youth Philosophy — Essay Competition 2026 site simgesi"><div class="visual-note">logosjournal.org</div></div>
+ <div class="visual"><div class="rank">PRESTİJ 72</div><img loading="lazy" src="https://www.google.com/s2/favicons?domain=logosjournal.org&amp;sz=128" alt="Logos Youth Philosophy — Essay Competition 2026 site simgesi"><div class="visual-note">logosjournal.org</div></div>
  <div class="body"><div class="title-line"><h2>Logos Youth Philosophy — Essay Competition 2026</h2><span class="badge">Başvuru açık · 15 Aralık</span></div>
  <div class="facts"><div><b>Son tarih / takvim</b><span>15 Aralık 2026; kapanış saati belirtilmiyor</span></div><div><b>Ücret</b><span>Başvuru sayfasında ücret belirtilmiyor; formdan teyit edilmeli</span></div><div><b>Yaş / uygunluk</b><span>15 Aralık 2026&#39;da 9–12. sınıf düzeyinde lise öğrencisi olanlar; tüm ülkeler</span></div><div><b>Konu</b><span>Felsefe, etik, bilgi felsefesi ve metafizik</span></div><div><b>Başvuru / teslim</b><span>İngilizce 1.000–3.000 kelime; kaynakça hariç. PDF ve APA kaynak gösterimi; serbest felsefe sorusu.</span></div><div><b>Ödül / sonuç</b><span>Seçilen yazıların öğrenci dergisinin ilk sayısında yayımlanması</span></div></div>
  <p class="caution"><b>Başvurmadan önce:</b> Öğrenci girişimidir; üniversite kabulü veya üniversitenin düzenlediği bir yarışma olarak değerlendirilmemeli.</p><p class="checked">Son kontrol: <time datetime="2026-11-08">8 Kasım 2026</time> · Resmî kaynak incelendi</p>
@@ -710,7 +735,7 @@ function getCurrentState(record, today, nowMs=Date.now()) {
 }
 if (typeof document !== 'undefined') {
  const records=JSON.parse(document.getElementById('competition-data').textContent);
- const q=document.getElementById('q'), st=document.getElementById('st'), openOnly=document.getElementById('open-only'), freeOnly=document.getElementById('free-only');
+ const q=document.getElementById('q'), st=document.getElementById('st');
  const container=document.getElementById('cards'), summary=document.getElementById('summary');
  const normalize=s=>s.toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('ı','i');
  const rows=records.map(r=>({record:r,card:document.getElementById('yarisma-'+r.rank),search:normalize([r.name,r.topic,r.eligibility,r.status,r.badge].join(' '))}));
@@ -721,15 +746,15 @@ if (typeof document !== 'undefined') {
   const ordered=[...rows].sort((a,b)=>a.record.prestigeRank-b.record.prestigeRank);
   let shown=0;
   ordered.forEach(row=>{
-   const show=(!query||row.search.includes(query))&&(!st.value||(st.value==='new'?row.record.isNew:row.state.status===st.value))&&(!openOnly.checked||['Açık','Yıl boyu'].includes(row.state.status))&&(!freeOnly.checked||row.record.freeConfirmed===true);
+   const show=(!query||row.search.includes(query))&&(!st.value||(st.value==='new'?row.record.isNew:row.state.status===st.value));
    row.card.style.display=show?'grid':'none'; if(show)shown++; container.appendChild(row.card);
   });
   const empty=document.getElementById('empty');empty.hidden=shown!==0;container.appendChild(empty);
   summary.textContent=shown+' / '+records.length+' yarışma/program · Tahmini prestij sırası · Son içerik kontrolü: 8 Kasım 2026';
  }
- q.addEventListener('input',update);st.addEventListener('change',update);openOnly.addEventListener('change',update);freeOnly.addEventListener('change',update);update();
+ q.addEventListener('input',update);st.addEventListener('change',update);update();
  setInterval(update,60000);
- function revealHash(){const target=document.getElementById(location.hash.slice(1));if(target?.classList.contains('card')){q.value='';st.value='';openOnly.checked=false;freeOnly.checked=false;update();target.scrollIntoView();}}
+ function revealHash(){const target=document.getElementById(location.hash.slice(1));if(target?.classList.contains('card')){q.value='';st.value='';update();target.scrollIntoView();}}
  window.addEventListener('hashchange',revealHash);if(location.hash)revealHash();
  document.querySelectorAll('.visual img').forEach(img=>img.addEventListener('error',()=>{img.hidden=true;}));
 }
